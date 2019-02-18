@@ -13,4 +13,6 @@
 
 Route::get('/', 'PagesController@index');
 
+Route::get('/order/checkout/{name}', 'OrderController@index');
+
 Route::post('/contact/send', 'ContactController@send');

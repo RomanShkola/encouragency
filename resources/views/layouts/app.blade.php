@@ -13,23 +13,8 @@
 <body>
 @include('inc.navbar')
 
-
-
-@yield('carousel')
-
-<div class="container marketing">
-    @yield('section-features')
-    @yield('section-important')
-</div>
-
-<div class="container">
 @yield('content')
-</div>
-<div class="container">
-    @yield('section-contact')
-</div>
 
 @include('inc.footer')
-
 </body>
 </html>

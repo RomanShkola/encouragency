@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 
-@section('carousel')
+@section('content')
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -50,61 +50,11 @@
         </a>
     </div>
 <br/>
-@endsection
 
 
-@section('content')
-    <div class="card-deck mb-3 text-center">
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Free</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
-            </div>
-        </div>
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Pro</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>20 users included</li>
-                    <li>10 GB of storage</li>
-                    <li>Priority email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
-            </div>
-        </div>
-        <div class="card mb-4 shadow-sm">
-            <div class="card-header">
-                <h4 class="my-0 font-weight-normal">Enterprise</h4>
-            </div>
-            <div class="card-body">
-                <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
-                <ul class="list-unstyled mt-3 mb-4">
-                    <li>30 users included</li>
-                    <li>15 GB of storage</li>
-                    <li>Phone and email support</li>
-                    <li>Help center access</li>
-                </ul>
-                <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
-            </div>
-        </div>
-    </div>
-@endsection
 
 
-@section('section-features')
+    <div class="container marketing">
     <!-- Three columns of text below the carousel -->
     <div class="row en-row-features">
         <div class="col-lg-4">
@@ -126,9 +76,6 @@
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
-    @endsection
-
-@section('section-important')
 
     <!-- START THE FEATURETTES -->
 
@@ -163,12 +110,66 @@
             <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="500" height="500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: 500x500"><title>Placeholder</title><rect width="100%" height="100%" fill="#eee"/><text x="50%" y="50%" fill="#aaa" dy=".3em">500x500</text></svg>
         </div>
     </div>
+    </div>
 
-    @endsection
+    <div class="container">
+        <div class="card-deck mb-3 text-center">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$0
+                        <small class="text-muted">/ mo</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>10 users included</li>
+                        <li>2 GB of storage</li>
+                        <li>Email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$15
+                        <small class="text-muted">/ mo</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>20 users included</li>
+                        <li>10 GB of storage</li>
+                        <li>Priority email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                </div>
+            </div>
+            <div class="card mb-4 shadow-sm">
+                <div class="card-header">
+                    <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$29
+                        <small class="text-muted">/ mo</small>
+                    </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                        <li>30 users included</li>
+                        <li>15 GB of storage</li>
+                        <li>Phone and email support</li>
+                        <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
-
-@section('section-contact')
+    <div class="container">
     <div class="card shadow-sm">
         <div class="card-body">
             <form method="post" action="/contact/send">
@@ -186,6 +187,10 @@
             </form>
         </div>
     </div>
-@endsection
+    </div>
 
+
+
+
+@endsection
 

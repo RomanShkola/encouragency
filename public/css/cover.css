@@ -62,6 +62,10 @@ footer a {
   margin-left: .75rem;
 }
 
+.container-order {
+  max-width: 996px;
+}
+
 
 .bd-placeholder-img {
   font-size: 1.125rem;
