@@ -116,7 +116,7 @@
         <div class="card-deck mb-3 text-center">
             <div class="card mb-4 shadow-sm">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Free</h4>
+                    <h4 class="my-0 font-weight-normal">Basic</h4>
                 </div>
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">$0
@@ -128,7 +128,9 @@
                         <li>Email support</li>
                         <li>Help center access</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Sign up for free</button>
+                    <a href="/order/basic">
+                        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                    </a>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm">
@@ -145,12 +147,14 @@
                         <li>Priority email support</li>
                         <li>Help center access</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                    <a href="/order/pro">
+                        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                    </a>
                 </div>
             </div>
             <div class="card mb-4 shadow-sm">
                 <div class="card-header">
-                    <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                    <h4 class="my-0 font-weight-normal">Ultra</h4>
                 </div>
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">$29
@@ -162,10 +166,13 @@
                         <li>Phone and email support</li>
                         <li>Help center access</li>
                     </ul>
-                    <button type="button" class="btn btn-lg btn-block btn-primary">Contact us</button>
+                    <a href="/order/ultra">
+                        <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
+                    </a>
                 </div>
             </div>
         </div>
+        </form>
     </div>
 
 
@@ -176,7 +183,8 @@
                 @csrf
                 <div class="form-group">
                     <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                           aria-describedby="emailHelp" placeholder="Enter email" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class="form-group">
