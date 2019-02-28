@@ -6,7 +6,7 @@
     <title>{{env('APP_TITLE')}}</title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/cover.css')}}">
-    <script src="{{ asset('js/app.js') }}"></script>
+
     <script src="{{ asset('js/custom.js') }}"></script>
     <script src="{{ asset('js/bootstrap.js') }}"></script>
 </head>
@@ -16,5 +16,6 @@
 @yield('content')
 
 @include('inc.footer')
+<script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

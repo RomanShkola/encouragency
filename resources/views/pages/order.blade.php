@@ -2,7 +2,7 @@
 
 
 @section('content')
-    <div class="container container-order">
+    <div id="app" class="container container-order">
         <div class="row pt-5 mt-5">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
@@ -43,6 +43,14 @@
                 <h4 class="mb-3">Order</h4>
                 <form class="needs-validation" method="post" action="/order/send">
                     @csrf
+                    <div class="mb-3">
+                        <label for="email">Email</label>
+                        <input type="email" name="user_email" class="form-control" id="email"
+                               placeholder="you@example.com" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address for shipping updates.
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="firstName">First name</label>
@@ -62,59 +70,9 @@
                         </div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="username">Social media link <span class="text-muted">(Optional)</span></label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">instagram.com/
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="#">instagram.com/</a>
-                                    <a class="dropdown-item" href="#">facebook.com/</a>
-                                    <a class="dropdown-item" href="#">vk.com/</a>
-                                </div>
-                            </div>
-                            <input type="text" name="user_soc_link" class="form-control"
-                                   aria-label="Text input with dropdown button">
-                        </div>
-                    </div>
+                    <input-social></input-social>
+                    <input-country-phone :countriescodes="{{json_encode($data)}}"></input-country-phone>
 
-                    <div class="mb-3">
-                        <label for="email">Email</label>
-                        <input type="email" name="user_email" class="form-control" id="email"
-                               placeholder="you@example.com" required>
-                        <div class="invalid-feedback">
-                            Please enter a valid email address for shipping updates.
-                        </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="phone_number">Phone number</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">instagram.com/
-                                </button>
-                                <div class="dropdown-menu scrollable-menu">
-                                    @foreach($data['calling_codes'] as $code => $value)
-                                        <a class="dropdown-item" href="#">{{ $code . " - " . $value }}</a>
-                                    @endforeach
-                                </div>
-                            </div>
-                            <input type="text" name="user_phone_number" class="form-control"
-                                   aria-label="Text input with dropdown button">
-                        </div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="address">Country</label>
-                        <select name="user_country" class="custom-select" required>
-                            <option disabled selected>Select country</option>
-                            @foreach($data['countries'] as $country)
-                                <option value="{{ $country }}">{{ $country }}</option>
-                            @endforeach
-                        </select>
-                    </div>
 
 
                     <!--<hr class="mb-4">
