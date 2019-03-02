@@ -13,8 +13,11 @@ class OrderController extends Controller
     {
         $countries = new Countries();
         $selectedProduct = Product::find(ucwords($name));
+        $countriesArray = $countries->all()->pluck('name.common', 'cca2')->toArray();
+        asort($countriesArray);
+
         $data = [
-            'countries' => $countries->all()->pluck('name.common', 'cca2')->toArray(),
+            'countries' => $countriesArray,
             'calling_codes' => $countries->all()->pluck('dialling.calling_code.0', 'cca2')->toArray(),
             'product' => $selectedProduct
         ];
@@ -39,6 +42,6 @@ class OrderController extends Controller
 
         $order->save();
 
-        return redirect('/order');
+        return redirect('/order/checkout')->with('success', 'Created order with number: ' . $order->id);
     }
 }
