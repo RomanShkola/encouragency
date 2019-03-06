@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./bootstrap')
 
 window.Vue = require('vue');
 
@@ -21,8 +21,9 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('input-social', require('./components/InputSocialSelectComponent.vue').default);
-Vue.component('input-country-phone', require('./components/InputCountryPhone.vue').default);
+Vue.component('order-component', require('./components/OrderComponent.vue').default);
+Vue.component('input-social-select-component', require('./components/InputSocialSelectComponent.vue').default);
+Vue.component('input-country-phone-component', require('./components/InputCountryPhone.vue').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

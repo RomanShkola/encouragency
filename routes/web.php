@@ -13,8 +13,12 @@
 
 Route::get('/', 'PagesController@index');
 
-Route::get('/order/{name}', 'OrderController@index');
+Route::get('/order/create/{name}', 'OrderController@create');
 
 Route::post('/order/send', 'OrderController@send');
 
+Route::get('/order/checkout', 'OrderController@checkout');
+
 Route::post('/contact/send', 'ContactController@send');
+
+Route::get('/promo/apply', 'PromoController@apply');

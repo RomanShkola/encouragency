@@ -21,12 +21,11 @@
 
 <script>
     export default {
-
+        //name: 'InputSocialSelectComponent',
         data() {
             return {
                 selected_soc_network: "instagram.com/",
                 soc_networks: ["instagram.com/", "facebook.com/", "vk.com/"],
-                userSocLink: ''
             }
         },
         methods: {

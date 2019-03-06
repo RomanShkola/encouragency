@@ -19,7 +19,7 @@
                 <label for="country">Country</label>
                 <select id="country" name="user_country" class="custom-select" @change="setPhoneNumberCode" required>
                     <option disabled selected value="">Select country</option>
-                    <option v-for="(country, code) in countriescodes.countries" :value="code"> {{ country }}</option>
+                    <option v-for="(country, code) in countries" :value="code"> {{ country }}</option>
                 </select>
             </div>
             <div class="col-md-4 mb-3">
@@ -40,13 +40,13 @@
                         {{ calling_code }}
                     </button>
                     <div class="dropdown-menu scrollable-menu">
-                        <a v-for="(phone_code, country_abbr) in countriescodes.calling_codes"
+                        <a v-for="(phone_code, country_abbr) in calling_codes"
                            @click="setPhoneNumberCodeLabel" class="dropdown-item" href="#">+{{ phone_code }} ({{
                             country_abbr }})</a>
                     </div>
                 </div>
 
-                <input id="phone_number" type="text" name="user_phone_num" class="form-control"
+                <input id="phone_number" type="text" name="user_phone_num" class="form-control" required
                        aria-label="Text input with dropdown button">
                 <input type="text" hidden name="user_phone_num_code" :value="calling_code"/>
             </div>
@@ -56,8 +56,10 @@
 
 <script>
     export default {
+        name: 'InputCountryPhone',
         props: [
-            'countriescodes'
+            'countries',
+            'calling_codes'
         ],
 
         data() {
@@ -71,12 +73,12 @@
         },
         methods: {
             update: function () {
-                console.log(this.countriescodes.countries);
+                console.log(this.countries);
             },
             setPhoneNumberCode: function (e) {
                 if (e.target.options.selectedIndex > -1) {
                     let countryCodeAbbr = e.target.options[e.target.options.selectedIndex].value;
-                    let code = this.countriescodes.calling_codes[countryCodeAbbr];
+                    let code = this.calling_codes[countryCodeAbbr];
                     this.calling_code = "+" + code + " (" + countryCodeAbbr + ")";
                 }
             },

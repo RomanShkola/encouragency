@@ -9,10 +9,11 @@ use PragmaRX\Countries\Package\Countries;
 
 class OrderController extends Controller
 {
-    public function index($name)
+    public function create($name)
     {
         $countries = new Countries();
         $selectedProduct = Product::find(ucwords($name));
+
         $countriesArray = $countries->all()->pluck('name.common', 'cca2')->toArray();
         asort($countriesArray);
 
@@ -22,6 +23,8 @@ class OrderController extends Controller
             'product' => $selectedProduct
         ];
         return view('pages.order')->with('data', $data);
+
+
     }
 
     public function send(Request $request)
@@ -39,9 +42,17 @@ class OrderController extends Controller
         $order->user_zip = $request->input('user_zip');
         $order->user_country = $request->input('user_country');
         $order->price_final = $request->input('price_final');
+        $order->product_name = $request->input('product_name');
 
         $order->save();
 
-        return redirect('/order/checkout')->with('success', 'Created order with number: ' . $order->id);
+        return redirect('/order/checkout')->with(['order_id' => $order->id]);
     }
+
+    public function checkout()
+    {
+
+        return view('pages.order-checkout');
+    }
+
 }

@@ -128,7 +128,7 @@
                         <li>Email support</li>
                         <li>Help center access</li>
                     </ul>
-                    <a href="/order/basic">
+                    <a href="/order/create/basic">
                         <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
                     </a>
                 </div>
@@ -147,7 +147,7 @@
                         <li>Priority email support</li>
                         <li>Help center access</li>
                     </ul>
-                    <a href="/order/pro">
+                    <a href="/order/create/pro">
                         <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
                     </a>
                 </div>
@@ -166,7 +166,7 @@
                         <li>Phone and email support</li>
                         <li>Help center access</li>
                     </ul>
-                    <a href="/order/ultra">
+                    <a href="/order/create/ultra">
                         <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button>
                     </a>
                 </div>
