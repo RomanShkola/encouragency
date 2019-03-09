@@ -43,6 +43,7 @@ class OrderController extends Controller
         $order->user_country = $request->input('user_country');
         $order->price_final = $request->input('price_final');
         $order->product_name = $request->input('product_name');
+        $order->applied_promo = $request->input('applied_promo');
 
         $order->save();
 
